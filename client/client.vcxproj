@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A0516861-62E0-46BB-9FE7-782363E84B00}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>multimedia;quick;websockets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>quick</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\libs\ffmpeg-4.2.2-win64\include;$(ProjectDir)..\libs\webrtc_m74\include;$(ProjectDir)..\libs\webrtc_m74\include\base;$(ProjectDir)..\libs\webrtc_m74\include\third_party;$(ProjectDir)..\libs\webrtc_m74\include\third_party\abseil-cpp;$(ProjectDir)..\libs\webrtc_m74\include\third_party\libyuv\include;$(ProjectDir)jsoncpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBRTC_WIN;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;NOMINMAX;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\libs\webrtc_m74\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>webrtc.lib;d3d9.lib;dmoguids.lib;wmcodecdspuuid.lib;winmm.lib;crypt32.lib;iphlpapi.lib;secur32.lib;amstrmid.lib;msdmo.lib;d3d11.lib;dxgi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\libs\ffmpeg-4.2.2-win64\include;$(ProjectDir)..\libs\webrtc_m74\include;$(ProjectDir)..\libs\webrtc_m74\include\base;$(ProjectDir)..\libs\webrtc_m74\include\third_party;$(ProjectDir)..\libs\webrtc_m74\include\third_party\abseil-cpp;$(ProjectDir)..\libs\webrtc_m74\include\third_party\libyuv\include;$(ProjectDir)jsoncpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBRTC_WIN;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;NOMINMAX;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\libs\webrtc_m74\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>webrtc.lib;d3d9.lib;dmoguids.lib;wmcodecdspuuid.lib;winmm.lib;crypt32.lib;iphlpapi.lib;secur32.lib;amstrmid.lib;msdmo.lib;d3d11.lib;dxgi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="conductor.cpp" />
+    <ClCompile Include="d3d9_render.cc" />
+    <ClCompile Include="defaults.cc" />
+    <ClCompile Include="external_decoder.cc" />
+    <ClCompile Include="external_video_decoder_factory.cc" />
+    <ClCompile Include="ffmpeg_video_decoder_factory.cc" />
+    <ClCompile Include="field_trial.cc" />
+    <ClCompile Include="json.cc" />
+    <ClCompile Include="jsoncpp\json_reader.cpp" />
+    <ClCompile Include="jsoncpp\json_value.cpp" />
+    <ClCompile Include="jsoncpp\json_writer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="nvcodec\nvenc.cpp" />
+    <ClCompile Include="nvcodec\NvEncoder\NvEncoder.cpp" />
+    <ClCompile Include="nvcodec\NvEncoder\NvEncoderD3D11.cpp" />
+    <ClCompile Include="nv_encoder.cc" />
+    <ClCompile Include="test_video_capturer.cc" />
+    <ClCompile Include="Tool_Websocket.cpp" />
+    <ClCompile Include="vcm_capturer.cc" />
+    <ClCompile Include="WebrtcCreateSessionDescriptionObserver.cpp" />
+    <ClCompile Include="WebrtcPeerConnectionObserver.cpp" />
+    <ClCompile Include="WebrtcSetSessionDescriptionObserver.cpp" />
+    <ClCompile Include="WebrtcVideoSinkInterface.cpp" />
+    <ClCompile Include="WebrtcVideoTrackSource.cpp" />
+    <ClCompile Include="WsClient.cpp" />
+    <None Include="jsoncpp\json_internalarray.inl" />
+    <None Include="jsoncpp\json_internalmap.inl" />
+    <None Include="jsoncpp\json_valueiterator.inl" />
+    <None Include="QML\Connect.qml" />
+    <None Include="QML\ConnectForm.ui.qml" />
+    <None Include="QML\PeerDelegate.qml" />
+    <None Include="QML\PeerDelegateForm.ui.qml" />
+    <None Include="QML\PeerList.qml" />
+    <None Include="QML\PeerListForm.ui.qml" />
+    <None Include="QML\Register.qml" />
+    <None Include="QML\RegisterForm.ui.qml" />
+    <None Include="QML\Streaming.qml" />
+    <None Include="QML\StreamingForm.ui.qml" />
+    <QtRcc Include="qml.qrc" />
+    <None Include="main.qml" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="conductor.h" />
+    <QtMoc Include="WsClient.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Tool_Websocket.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="WebrtcCreateSessionDescriptionObserver.h" />
+    <QtMoc Include="WebrtcSetSessionDescriptionObserver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="d3d9_render.h" />
+    <ClInclude Include="defaults.h" />
+    <ClInclude Include="external_decoder.h" />
+    <ClInclude Include="external_video_decoder_factory.h" />
+    <ClInclude Include="ffmpeg_video_decoder_factory.h" />
+    <ClInclude Include="field_trial.h" />
+    <ClInclude Include="flag_defs.h" />
+    <ClInclude Include="json.h" />
+    <ClInclude Include="jsoncpp\json\assertions.h" />
+    <ClInclude Include="jsoncpp\json\autolink.h" />
+    <ClInclude Include="jsoncpp\json\config.h" />
+    <ClInclude Include="jsoncpp\json\features.h" />
+    <ClInclude Include="jsoncpp\json\forwards.h" />
+    <ClInclude Include="jsoncpp\json\json.h" />
+    <ClInclude Include="jsoncpp\json\reader.h" />
+    <ClInclude Include="jsoncpp\json\value.h" />
+    <ClInclude Include="jsoncpp\json\writer.h" />
+    <ClInclude Include="jsoncpp\json_batchallocator.h" />
+    <ClInclude Include="jsoncpp\json_tool.h" />
+    <ClInclude Include="nvcodec\encoder_info.h" />
+    <ClInclude Include="nvcodec\nvenc.h" />
+    <ClInclude Include="nvcodec\NvEncoder\nvEncodeAPI.h" />
+    <ClInclude Include="nvcodec\NvEncoder\NvEncoder.h" />
+    <ClInclude Include="nvcodec\NvEncoder\NvEncoderD3D11.h" />
+    <ClInclude Include="nv_encoder.h" />
+    <ClInclude Include="test_video_capturer.h" />
+    <ClInclude Include="vcm_capturer.h" />
+    <QtMoc Include="WebrtcPeerConnectionObserver.h" />
+    <QtMoc Include="WebrtcVideoSinkInterface.h" />
+    <ClInclude Include="WebrtcVideoTrackSource.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

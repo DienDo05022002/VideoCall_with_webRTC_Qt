@@ -1,0 +1,16 @@
+﻿  conductor.cpp
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(78,15): warning C4566: character represented by universal-character-name '\uFF1A' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(100,21): warning C4566: character represented by universal-character-name '\uFF1A' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(148,21): warning C4566: character represented by universal-character-name '\uFF1A' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(352,21): warning C4566: character represented by universal-character-name '\u7684' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(352,21): warning C4566: character represented by universal-character-name '\u95EE' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(352,21): warning C4566: character represented by universal-character-name '\u9898' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(358,25): warning C4566: character represented by universal-character-name '\u7684' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(358,25): warning C4566: character represented by universal-character-name '\u95EE' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(358,25): warning C4566: character represented by universal-character-name '\u9898' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(363,25): warning C4566: character represented by universal-character-name '\u7684' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(363,25): warning C4566: character represented by universal-character-name '\u95EE' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(363,25): warning C4566: character represented by universal-character-name '\u9898' cannot be represented in the current code page (1252)
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(215): warning C4700: uninitialized local variable 'buffer' used
+D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\client\conductor.cpp(381): warning C4700: uninitialized local variable 'buffer' used
+  client.vcxproj -> D:\Source-Code\Projects\VisualStudio\QML\Qt_webrtc\x64\Debug\client.exe

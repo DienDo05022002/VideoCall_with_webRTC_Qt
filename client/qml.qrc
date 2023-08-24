@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>QML/Register.qml</file>
+        <file>QML/RegisterForm.ui.qml</file>
+        <file>QML/Connect.qml</file>
+        <file>QML/ConnectForm.ui.qml</file>
+        <file>QML/PeerList.qml</file>
+        <file>QML/PeerListForm.ui.qml</file>
+        <file>QML/PeerDelegate.qml</file>
+        <file>QML/PeerDelegateForm.ui.qml</file>
+        <file>QML/Streaming.qml</file>
+        <file>QML/StreamingForm.ui.qml</file>
+    </qresource>
+</RCC>
